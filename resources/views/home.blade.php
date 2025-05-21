@@ -1,63 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Replecs</title>
-    @vite('resources/css/app.css')
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body class="bg-gray-100 font-sans">
+@extends('layouts.app')
 
-<div class="flex min-h-screen">
+@section('content')
+{{-- Main Content --}}
+<div class="ml-48 flex-1 p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    {{-- Text Content --}}
+    <div>
+        <p class="mb-4 text-lg font-semibold">🎮 Bingung Pilih Laptop Gaming? Kami Bantu Temukan yang Terbaik.</p>
+        <p class="mb-6 leading-relaxed text-sm md:text-base">
+            Gunakan aplikasi cerdas berbasis Sistem Pendukung Keputusan (SPK) untuk menemukan laptop gaming
+            yang paling sesuai dengan kebutuhan performa, budget, dan gaya bermainmu. Pilih sendiri
+            prioritasmu, dan biarkan sistem bekerja memberi rekomendasi paling akurat.
+        </p>
+        <a href="#"
+            class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded shadow">
+            Mulai Sekarang
+        </a>
+    </div>
 
-    <!-- Sidebar -->
-    <aside class="w-20 bg-green-600 flex flex-col items-center py-6 space-y-6 rounded-tr-3xl rounded-br-3xl shadow-lg">
-        <div class="bg-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-green-600 text-sm">logo</div>
-        <a href="#" class="text-white text-xl"><i class="fas fa-home"></i></a>
-        <a href="#" class="text-white text-xl"><i class="fas fa-table"></i></a>
-        <a href="#" class="text-white text-xl"><i class="fas fa-info-circle"></i></a>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="flex-1 p-8">
-        <div class="flex justify-between items-center mb-8">
-            <h1 class="text-3xl font-bold text-green-800">Replecs</h1>
-
-            <!-- Search -->
-            <div class="relative w-72">
-                <input type="text" placeholder="Search tables"
-                    class="w-full py-2 pl-10 pr-4 rounded-full bg-green-500 text-white placeholder-white shadow focus:outline-none focus:ring-2 focus:ring-green-700">
-                <div class="absolute left-3 top-2.5 text-white">
-                    <i class="fas fa-search"></i>
-                </div>
-            </div>
+    {{-- Image Section --}}
+    <div class="flex flex-col items-center">
+        <div class="p-2 bg-green-600 rounded-tr-3xl rounded-bl-3xl">
+            <img src="{{ asset('images/rog-flow.jpg') }}" alt="ROG Flow Z13" class="rounded-lg max-w-full">
         </div>
-
-        <!-- Grid Content -->
-        <div class="grid grid-cols-2 gap-6">
-            @for ($i = 0; $i < 4; $i++)
-                <div class="bg-gray-200 h-40 rounded-lg flex items-center justify-center text-lg font-semibold">
-                    isi konten apa aja
-                </div>
-            @endfor
-        </div>
-    </main>
+        <h5 class="mt-3 text-sm text-white">ROG Flow Z13</h5>
+    </div>
 </div>
-
-</body>
-</html>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    'green-500': '#4CAF50',
-                    'green-600': '#1D976C',
-                    'green-700': '#2E7D32',
-                    'green-800': '#1B5E20',
-                }
-            }
-        }
-    }
-</script>
+@endsection
