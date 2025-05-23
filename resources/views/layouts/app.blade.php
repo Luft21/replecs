@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Replecs</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="//unpkg.com/alpinejs" defer></script>
 
     {{-- Font Awesome (ikon sidebar) --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -24,6 +25,7 @@
             <div class="absolute top-1/2 -translate-y-1/2 left-10">
                 <div class="w-20 bg-[#1e1e1e] rounded-2xl flex flex-col items-center py-20 space-y-6 shadow-lg gap-10">
                     <i class="fas fa-home text-xl"></i>
+                    <i class="fas fa-file-alt text-xl"></i>
                     <i class="fas fa-table text-xl"></i>
                     <i class="fas fa-info-circle text-xl"></i>
                 </div>

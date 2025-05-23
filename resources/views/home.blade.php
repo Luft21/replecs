@@ -11,18 +11,77 @@
             yang paling sesuai dengan kebutuhan performa, budget, dan gaya bermainmu. Pilih sendiri
             prioritasmu, dan biarkan sistem bekerja memberi rekomendasi paling akurat.
         </p>
-        <a href="#"
+        <a href="{{ url('/dss') }}"
             class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded shadow">
             Mulai Sekarang
         </a>
     </div>
 
     {{-- Image Section --}}
-    <div class="flex flex-col items-center">
-        <div class="p-2 bg-green-600 rounded-tr-3xl rounded-bl-3xl">
-            <img src="{{ asset('images/rog-flow.jpg') }}" alt="ROG Flow Z13" class="rounded-lg max-w-full">
-        </div>
-        <h5 class="mt-3 text-sm text-white">ROG Flow Z13</h5>
+    <div 
+    x-data="{
+        active: 0,
+        images: [
+        { src: '{{ asset('images/rog-flow.png') }}', label: 'ROG Flow Z13' },
+        { src: '{{ asset('images/acer-nitro.png') }}', label: 'Acer Nitro' },
+        { src: '{{ asset('images/asus-tuf.png') }}', label: 'Asus TUF' },
+        { src: '{{ asset('images/hp-omen.png') }}', label: 'HP Omen' },
+        { src: '{{ asset('images/lenovo-legion.png') }}', label: 'Lenovo Legion' }
+        ],
+        init() {
+        setInterval(() => {
+            this.next();
+        }, 3000); // Change every 3 seconds
+        },
+        prev() {
+        this.active = (this.active === 0) ? this.images.length - 1 : this.active - 1;
+        },
+        next() {
+        this.active = (this.active === this.images.length - 1) ? 0 : this.active + 1;
+        }
+    }" 
+    x-init="init()"
+    class="flex flex-col items-center max-w-md mx-auto"
+    >
+    <div class="relative w-120 p-2 rounded-tr-3xl rounded-bl-3xl h-90 overflow-hidden">
+        <template x-for="(image, index) in images" :key="index">
+            <img
+                :src="image.src"
+                :alt="image.label"
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out rounded-lg"
+                :class="{ 'opacity-100': active === index, 'opacity-0': active !== index }"
+            />
+        </template>
     </div>
+
+    <div class="relative h-10 mt-3">
+        <template x-for="(image, index) in images" :key="'label-' + index">
+            <h5
+                class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center font-semibold text-white text-xl transition-opacity duration-1000 ease-in-out whitespace-nowrap"
+                :class="{ 'opacity-100': active === index, 'opacity-0': active !== index }"
+            >
+            <span x-text="image.label"></span>
+        </h5>
+    </template>
+
+    <!-- Buttons
+    <div class="flex space-x-4 mt-3">
+        <button 
+        @click="prev()" 
+        class="px-4 py-2 text-white rounded hover:bg-gray-600"
+        aria-label="Previous image"
+        >
+        <i class="fas fa-chevron-left text-xl"></i>
+        </button>
+        <button 
+        @click="next()" 
+        class="px-4 py-2 text-white rounded hover:bg-gray-600"
+        aria-label="Next image"
+        >
+        <i class="fas fa-chevron-right text-xl"></i>
+        </button>
+    </div> -->
+    </div>
+
 </div>
 @endsection
