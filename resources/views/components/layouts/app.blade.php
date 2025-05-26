@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Replecs</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src="//unpkg.com/alpinejs" defer></script>
 
     {{-- Font Awesome (ikon sidebar) --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    @livewireStyles
 </head>
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-[#121212] text-white flex flex-col">
@@ -30,8 +31,9 @@
                     <i class="fas fa-info-circle text-xl"></i>
                 </div>
             </div>
-            @yield('content')
+            {{ $slot }}
         </div>
     </div>
+    @livewireScripts
 </body>
 </html>
