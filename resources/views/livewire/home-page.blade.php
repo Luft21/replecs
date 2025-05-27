@@ -1,8 +1,8 @@
 {{-- Main Content --}}
-<div class="ml-48 flex-1 p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div class="p-8 text grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center">
     {{-- Text Content --}}
     <div>
-        <p class="mb-4 text-lg font-semibold">🎮 Bingung Pilih Laptop Gaming? Kami Bantu Temukan yang Terbaik.</p>
+        <p class="mb-4 text-xl font-semibold">🎮 Bingung Pilih Laptop Gaming? Kami Bantu Temukan yang Terbaik.</p>
         <p class="mb-6 leading-relaxed text-sm md:text-base">
             Gunakan aplikasi cerdas berbasis Sistem Pendukung Keputusan (SPK) untuk menemukan laptop gaming
             yang paling sesuai dengan kebutuhan performa, budget, dan gaya bermainmu. Pilih sendiri
@@ -57,9 +57,9 @@
                 class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center font-semibold text-white text-xl transition-opacity duration-1000 ease-in-out whitespace-nowrap"
                 :class="{ 'opacity-100': active === index, 'opacity-0': active !== index }"
             >
-            <span x-text="image.label"></span>
-        </h5>
-    </template>
+                <span x-text="image.label"></span>
+            </h5>
+        </template>
 
     <!-- Buttons
     <div class="flex space-x-4 mt-3">
