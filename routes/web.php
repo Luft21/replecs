@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Livewire\HomePage;
 use App\Livewire\AuthPage;
+use App\Livewire\DSSPage;
 
 Route::get('/', HomePage::class)->name('home');
 
@@ -20,3 +21,5 @@ Route::post('/logout', function () {
     request()->session()->regenerateToken();
     return redirect('/')->with('status', 'Anda telah logout.');
 })->name('logout');
+
+Route::get('/dss', DSSPage::class);
