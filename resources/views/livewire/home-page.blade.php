@@ -9,7 +9,7 @@
             prioritasmu, dan biarkan sistem bekerja memberi rekomendasi paling akurat.
         </p>
         <a href="{{ url('/dss') }}"
-            class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded shadow">
+            class="bg-gradient-to-r from-[#1D976C] to-[#093123] text-white font-semibold py-2 px-4 rounded-lg shadow">
             Mulai Sekarang
         </a>
     </div>

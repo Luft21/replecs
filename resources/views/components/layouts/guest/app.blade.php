@@ -18,13 +18,6 @@
         <div class="col-span-5 row-start-1 row-end-2 flex items-center px-20 pt-6 bg-[#121212]">
             <div class="w-12 h-12 bg-gradient-to-br from-[#1D976C] to-[#093123] rounded-full"></div>
             <h1 class="ml-4 text-2xl font-bold bg-gradient-to-r from-[#1D976C] to-[#093123] bg-clip-text text-transparent">Replecs</h1>
-            <form method="POST" action="{{ route('logout') }}" class="ml-auto">
-                @csrf
-                <button type="submit" class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white rounded-lg shadow transition-all duration-200">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span class="hidden sm:inline">Logout</span>
-                </button>
-            </form>
         </div>
 
         {{-- Sidebar (div2) --}}
