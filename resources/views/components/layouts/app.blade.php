@@ -25,8 +25,8 @@
         <div class="flex flex-1 relative">
             <div class="absolute top-1/2 -translate-y-1/2 left-10">
                 <div class="w-20 bg-[#1e1e1e] rounded-2xl flex flex-col items-center py-20 space-y-6 shadow-lg gap-10">
-                    <i class="fas fa-home text-xl"></i>
-                    <i class="fas fa-file-alt text-xl"></i>
+                    <a href="{{ url('/') }}"><i class="fas fa-home text-xl"></i></a>
+                    <a href="{{ url('/dss') }}"><i class="fas fa-file-alt text-xl"></i></a>
                     <i class="fas fa-table text-xl"></i>
                     <i class="fas fa-info-circle text-xl"></i>
                 </div>
