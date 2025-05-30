@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('nama');
             $table->string('merek', 100);
             $table->text('specs')->nullable();
-            // $table->timestamps();
+            $table->string('gambar')->nullable(); // Tambahkan ini
+            $table->timestamps();
         });
 
         // Tabel Kriteria
@@ -25,14 +26,14 @@ return new class extends Migration
             $table->string('nama');
             $table->string('jenis', 10); // Contoh: 'benefit', 'cost'
             $table->text('deskripsi')->nullable();
-            // $table->timestamps();
+            $table->timestamps();
         });
 
         // Tabel Sesi SPK
         Schema::create('sesi_spk', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->foreignUuid('id_user')->constrained('users', 'id')->onDelete('cascade'); // Pastikan nama tabel 'users' sudah benar
-            // $table->timestamps();
+            $table->timestamps();
         });
 
         // Tabel Hasil SPK (VIKOR)
@@ -43,7 +44,7 @@ return new class extends Migration
             $table->float('nilai_R');
             $table->float('nilai_Q');
             // $table->integer('ranking')->nullable(); // Ranking bisa dihitung saat query
-            // $table->timestamps();
+            $table->timestamps();
         });
 
         // Tabel Nilai Kriteria per Laptop
@@ -52,7 +53,7 @@ return new class extends Migration
             $table->foreignUuid('id_laptop')->constrained('laptop', 'id')->onDelete('cascade');
             $table->float('nilai'); // Atau $table->decimal('nilai', 8, 2); jika perlu presisi
             $table->primary(['id_kriteria', 'id_laptop']);
-            // $table->timestamps();
+            $table->timestamps();
         });
 
         // Tabel Bobot Kriteria per Sesi
@@ -61,7 +62,7 @@ return new class extends Migration
             $table->foreignUuid('id_sesi')->constrained('sesi_spk', 'id')->onDelete('cascade');
             $table->float('nilai_bobot'); // Atau $table->decimal('nilai_bobot', 8, 4);
             $table->primary(['id_kriteria', 'id_sesi']);
-            // $table->timestamps();
+            $table->timestamps();
         });
     }
 
