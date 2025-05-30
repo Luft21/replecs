@@ -8,6 +8,6 @@ class DSSPage extends Component
 {
     public function render()
     {
-        return view('livewire.dss');
+        return view('livewire.dss')->layout('components.layouts.dss');;
     }
 }
