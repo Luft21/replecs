@@ -70,26 +70,4 @@ function updateSliderTrack(sliderId, value) {
 
     slider.style.background = `linear-gradient(to right, ${segments.join(", ")})`;
 }
-
-function updateCircles(sliderId, circlePrefix, value) {
-    for (let i = 1; i <= 5; i++) {
-        const circle = document.getElementById(circlePrefix + i);
-        if (i <= value) {
-            circle.style.backgroundColor = "#4ade80";
-            circle.style.color = "#1f1f1f";
-        } else {
-            circle.style.backgroundColor = "#1f1f1f";
-            circle.style.color = "#4ade80";
-        }
-    }
-
-    document.getElementById("selected-value-" + sliderId).textContent = value;
-}
-
-// Initialize on page load
-document.addEventListener("DOMContentLoaded", function () {
-    const slider = document.getElementById("{{ $sliderId }}");
-    updateSliderTrack('{{ $sliderId }}', slider.value);
-    updateCircles('{{ $sliderId }}', '{{ $circlePrefix }}', slider.value);
-});
 </script>

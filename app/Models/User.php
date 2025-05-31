@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Concerns\HasUuids; // Import the HasUuids trait
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 
-class User extends Authenticatable
+
+class User extends Authenticatable implements FilamentUser
 {
     use HasFactory, Notifiable, HasUuids; // Add HasUuids here
 
@@ -35,6 +38,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_admin',
         // If your 'id' column is named differently and you want to allow mass assignment (generally not recommended for primary keys),
         // ensure it's listed here. However, HasUuids should handle ID generation automatically.
     ];
@@ -59,6 +63,12 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'is_admin' => 'boolean',
         ];
+    }
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return (bool) $this->is_admin;
     }
 }

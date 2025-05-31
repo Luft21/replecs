@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\AlternatifResource\Pages;
 use App\Filament\Resources\AlternatifResource\RelationManagers;
-use App\Models\Alternatif;
+use App\Models\Laptop as Alternatif;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;

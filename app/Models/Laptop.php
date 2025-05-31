@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
-class Alternatif extends Model
+class Laptop extends Model
 {
     use HasUuids;
 
@@ -23,4 +23,14 @@ class Alternatif extends Model
         'specs',
         'gambar',
     ];
+
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
+
+    public function nilaiKriteriaLaptop(): HasMany
+    {
+        return $this->hasMany(NilaiKriteriaLaptop::class, 'id_laptop', 'id');
+    }
 }

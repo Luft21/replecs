@@ -1,9 +1,12 @@
 <?php
+
 namespace App\Livewire;
 
+use App\Models\SesiSpk;
 use Livewire\Component;
+use Livewire\WithPagination;
 
-class DssSlider extends Component
+class QuestionnairePage extends Component
 {
     public $value1 = 3;
     public $value2 = 3;
@@ -14,6 +17,6 @@ class DssSlider extends Component
 
     public function render()
     {
-        return view('livewire.dss-slider');
+        return view('livewire.questionnaire')->layout('components.layouts.dss');
     }
 }
