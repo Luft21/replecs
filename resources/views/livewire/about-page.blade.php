@@ -19,9 +19,9 @@
                 activeIndex: 0,
                 direction: 'right',
                 members: [
-                    { name: 'Jose', image: '{{ asset('images/jose.png') }}' },
-                    { name: 'Ady', image: '{{ asset('images/ady.png') }}' },
-                    { name: 'Angel', image: '{{ asset('images/angel.png') }}' }
+                    { name: 'Jose Febrian Limbor', image: '{{ asset('images/jose.png') }}' },
+                    { name: 'Ahmad Mukhlash Muhtady', image: '{{ asset('images/ady.png') }}' },
+                    { name: 'Virginia Angel Alexandra Soen', image: '{{ asset('images/angel.png') }}' }
                 ],
                 prev() {
                     this.direction = 'left';

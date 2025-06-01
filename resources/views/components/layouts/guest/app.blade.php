@@ -8,10 +8,11 @@
 
     {{-- Font Awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
     @livewireStyles
 </head>
-<body class="font-sans antialiased bg-[#121212] text-white">
+<body class="font-sans antialiased bg-[#161616] text-white">
     <div class="grid [grid-template-columns:0.5fr_repeat(4,_1fr)] [grid-template-rows:0.5fr_repeat(4,_1fr)] min-h-screen">
 
         {{-- Navbar (div1) --}}

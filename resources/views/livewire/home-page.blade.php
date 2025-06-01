@@ -10,12 +10,12 @@
         </p>
         @auth
             <a href="{{ url('/spk/sessions') }}"
-                class="bg-gradient-to-r from-[#1D976C] to-[#093123] text-white font-semibold py-2 px-4 rounded-lg shadow">
+                class="bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold py-2 px-4 rounded-lg">
                 Mulai Sekarang
             </a>
         @else
             <a href="{{ url('/auth') }}"
-                class="bg-gradient-to-r from-[#1D976C] to-[#093123] text-white font-semibold py-2 px-4 rounded-lg shadow">
+                class="bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold py-2 px-4 rounded-lg">
                 Mulai Sekarang
             </a>
         @endauth
