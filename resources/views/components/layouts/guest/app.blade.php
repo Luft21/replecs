@@ -8,10 +8,11 @@
 
     {{-- Font Awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
     @livewireStyles
 </head>
-<body class="font-sans antialiased bg-[#121212] text-white">
+<body class="font-sans antialiased bg-[#161616] text-white">
     <div class="grid [grid-template-columns:0.5fr_repeat(4,_1fr)] [grid-template-rows:0.5fr_repeat(4,_1fr)] min-h-screen">
 
         {{-- Navbar (div1) --}}
@@ -26,15 +27,16 @@
                 </a>
         </div>
 
-        {{-- Sidebar (div2) --}}
-        <div class="col-start-1 col-end-2 row-start-2 row-end-6 flex justify-center items-center pt-10 bg-[#121212]">
-            <div class="w-20 bg-[#1e1e1e] rounded-2xl flex flex-col items-center justify-center py-10 space-y-15 shadow-lg">
-                <i class="fas fa-home text-2xl"></i>
-                <i class="fas fa-file-alt text-2xl"></i>
-                <i class="fas fa-table text-2xl"></i>
-                <i class="fas fa-info-circle text-2xl"></i>
-            </div>
+    {{-- Sidebar (div2) --}}
+    <div class="col-start-1 col-end-2 row-start-2 row-end-6 flex justify-center items-center pt-10 bg-[#121212]">
+        <div class="w-20 bg-[#1e1e1e] rounded-2xl flex flex-col items-center justify-center py-10 space-y-15 shadow-lg">
+            <i class="fas fa-home text-2xl text-[#93F9B9]"></i>
+            <i class="fas fa-file-alt text-2xl text-[#93F9B9]"></i>
+            <i class="fas fa-table text-2xl text-[#93F9B9]"></i>
+            <i class="fas fa-info-circle text-2xl text-[#93F9B9]"></i>
         </div>
+    </div>
+
 
         {{-- Main Content (div3) --}}
         <div class="flex col-start-2 col-end-6 row-start-2 row-end-6 px-6 py-4">
