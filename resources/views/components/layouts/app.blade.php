@@ -33,7 +33,7 @@
                 <a href="{{ url('/') }}"><i class="fas fa-home text-xl"></i></a>
                 <a href="{{ url('/spk/sessions') }}"><i class="fas fa-file-alt text-xl"></i></a>
                 <a href="{{ url('/alternatif') }}"><i class="fas fa-table text-2xl"></i></a>
-                <i class="fas fa-info-circle text-2xl"></i>
+                <a href="{{ url('/about') }}"><i class="fas fa-info-circle text-2xl"></i></a>
 
             </div>
         </div>
