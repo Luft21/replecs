@@ -9,7 +9,7 @@
                 <div 
                     class="w-8 h-8 flex items-center justify-center rounded-full border-2 text-sm font-bold transition-all duration-200 bg-[#1f1f1f]"
                     id="{{ $circlePrefix . $i }}"
-                    style="border-color: #4ade80; color: #4ade80;"
+                    style="border-color: #1D976C; color: #1D976C;"
                 >
                     {{ $i }}
                 </div>

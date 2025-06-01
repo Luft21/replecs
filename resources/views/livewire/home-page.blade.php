@@ -8,10 +8,17 @@
             yang paling sesuai dengan kebutuhan performa, budget, dan gaya bermainmu. Pilih sendiri
             prioritasmu, dan biarkan sistem bekerja memberi rekomendasi paling akurat.
         </p>
-        <a href="{{ url('/dss') }}"
-            class="bg-gradient-to-r from-[#1D976C] to-[#093123] text-white font-semibold py-2 px-4 rounded-lg shadow">
-            Mulai Sekarang
-        </a>
+        @auth
+            <a href="{{ url('/spk/sessions') }}"
+                class="bg-gradient-to-r from-[#1D976C] to-[#093123] text-white font-semibold py-2 px-4 rounded-lg shadow">
+                Mulai Sekarang
+            </a>
+        @else
+            <a href="{{ url('/auth') }}"
+                class="bg-gradient-to-r from-[#1D976C] to-[#093123] text-white font-semibold py-2 px-4 rounded-lg shadow">
+                Mulai Sekarang
+            </a>
+        @endauth
     </div>
 
     {{-- Image Section --}}

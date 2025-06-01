@@ -101,11 +101,11 @@
             const circle = document.getElementById(circlePrefix + i);
             if (circle) {
                 if (i <= val) {
-                    circle.style.backgroundColor = '#4ade80';
+                    circle.style.backgroundColor = '#1D976C';
                     circle.style.color = '#000';
                 } else {
-                    circle.style.backgroundColor = 'transparent';
-                    circle.style.color = '#4ade80';
+                    circle.style.backgroundColor = '#111827';
+                    circle.style.color = '#1D976C';
                 }
             }
         }
