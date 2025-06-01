@@ -29,22 +29,22 @@
         </div>
 
         {{-- Sidebar (div2) --}}
-<div class="col-start-1 col-end-2 row-start-2 row-end-6 flex justify-center items-center pt-10 bg-[#121212]">
-    <div class="w-20 bg-[#1e1e1e] rounded-2xl flex flex-col items-center justify-center py-10 space-y-15 shadow-lg">
-        <a href="{{ url('/') }}">
-            <i class="fas fa-home text-xl text-[#93F9B9]"></i>
-        </a>
-        <a href="{{ url('/spk/sessions') }}">
-            <i class="fas fa-file-alt text-xl text-[#93F9B9]"></i>
-        </a>
-        <a href="{{ url('/alternatif') }}">
-            <i class="fas fa-table text-2xl text-[#93F9B9]"></i>
-        </a>
-        <a href="{{ url('/about') }}">
-            <i class="fas fa-info-circle text-2xl text-[#93F9B9]"></i>
-        </a>
-    </div>
-</div>
+        <div class="col-start-1 col-end-2 row-start-2 row-end-6 flex justify-center items-center pt-10 bg-[#121212]">
+            <div class="w-20 bg-[#1e1e1e] rounded-2xl flex flex-col items-center justify-center py-10 space-y-15 shadow-lg">
+                <a href="{{ url('/') }}">
+                    <i class="fas fa-home text-xl text-[#93F9B9]"></i>
+                </a>
+                <a href="{{ url('/spk/sessions') }}">
+                    <i class="fas fa-file-alt text-xl text-[#93F9B9]"></i>
+                </a>
+                <a href="{{ url('/alternatif') }}">
+                    <i class="fas fa-table text-2xl text-[#93F9B9]"></i>
+                </a>
+                <a href="{{ url('/about') }}">
+                    <i class="fas fa-info-circle text-2xl text-[#93F9B9]"></i>
+                </a>
+            </div>
+        </div>
 
 
         {{-- Main Content (div3) --}}
