@@ -1,13 +1,13 @@
 {{-- About Page --}}
-<div class="text-white flex items-center justify-center relative px-6 py-12">
+<div class="text-white flex items-center justify-center relative px-6 py-6">
 
     {{-- Konten utama --}}
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
         
         {{-- Teks --}}
-        <div>
-            <h1 class="text-3xl font-bold mb-4">About</h1>
-            <p class="text-sm leading-relaxed text-gray-300">
+        <div class="-mt-[150px]">
+            <h1 class="text-4xl font-bold mb-8">About</h1>
+            <p class="text-m leading-relaxed text-gray-300">
                 Replecs adalah aplikasi cerdas berbasis Sistem Pendukung Keputusan (SPK) dalam menemukan laptop gaming yang paling sesuai untuk pengguna berdasarkan performa, daya tahan, budget, dan lainnya.<br><br>
                 Aplikasi ini dikembangkan oleh Kelompok 8 yang beranggotakan Jose, Ady, dan Angel.
             </p>
@@ -17,18 +17,21 @@
         <div 
             x-data="{
                 activeIndex: 0,
-                direction: 'right',
+                prevIndex: null,
+                direction: 'right',  // track direction: 'right' or 'left'
                 members: [
-                    { name: 'Jose Febrian Limbor', image: '{{ asset('images/jose.png') }}' },
-                    { name: 'Ahmad Mukhlash Muhtady', image: '{{ asset('images/ady.png') }}' },
-                    { name: 'Virginia Angel Alexandra Soen', image: '{{ asset('images/angel.png') }}' }
+                    { name: 'Jose Febrian Limbor', image: '{{ asset('images/vergil.jpg') }}' },
+                    { name: 'Ahmad Mukhlash Muhtady', image: '{{ asset('images/dante.jpg') }}' },
+                    { name: 'Virginia Angel Alexandra Soen', image: '{{ asset('images/lady.jpg') }}' }
                 ],
                 prev() {
                     this.direction = 'left';
+                    this.prevIndex = this.activeIndex;
                     this.activeIndex = (this.activeIndex === 0) ? this.members.length - 1 : this.activeIndex - 1;
                 },
                 next() {
                     this.direction = 'right';
+                    this.prevIndex = this.activeIndex;
                     this.activeIndex = (this.activeIndex === this.members.length - 1) ? 0 : this.activeIndex + 1;
                 }
             }"
@@ -46,20 +49,42 @@
             </button>
 
             {{-- Card animasi --}}
-            <div class="overflow-hidden h-full rounded-2xl relative">
+            <div class="overflow-hidden h-[400px] rounded-2xl relative">
                 <template x-for="(member, index) in members" :key="index">
                     <div 
-                        x-show="activeIndex === index" 
-                        x-transition:enter="transition transform duration-500"
-                        x-transition:enter-start="opacity-0 translate-x-full"
-                        x-transition:enter-end="opacity-100 translate-x-0"
-                        x-transition:leave="transition transform duration-500"
-                        x-transition:leave-start="opacity-100 translate-x-0"
-                        x-transition:leave-end="opacity-0 -translate-x-full"
-                        class="absolute inset-0 bg-gradient-to-br from-[#39ff88] to-[#1E1E1E] p-4 rounded-2xl shadow-lg"
+                        x-show="index === activeIndex || index === prevIndex"
+                        :class="{
+                            'z-20 scale-100 translate-x-0': index === activeIndex,
+                            'z-10 scale-90 translate-x-6 opacity-50': index === prevIndex
+                        }"
+                        x-transition:enter="transition-all duration-500 ease-in-out"
+                        :x-transition:enter-start="direction === 'right' ? 'opacity-0 scale-90 translate-x-[-30px]' : 'opacity-0 scale-90 translate-x-[30px]'"
+                        :x-transition:enter-end="'opacity-100 scale-100 translate-x-0'"
+                        x-transition:leave="transition-all duration-500 ease-in-out"
+                        :x-transition:leave-start="'opacity-100 scale-100 translate-x-0'"
+                        :x-transition:leave-end="direction === 'right' ? 'opacity-0 scale-90 translate-x-[30px]' : 'opacity-0 scale-90 translate-x-[-30px]'"
+
+                        class="absolute inset-0 bg-transparent p-4 rounded-2xl shadow-lg flex flex-col items-center will-change-transform transform-gpu"
                     >
-                        <img :src="member.image" :alt="member.name" class="rounded-2xl mb-3 w-full h-[280px] object-cover" />
-                        <p class="font-semibold text-white" x-text="member.name"></p>
+                       <!-- Styled layered image card -->
+                        <div class="relative w-full h-[360px] rounded-2xl overflow-visible shadow-md mb-3">
+                            <!-- Background card (offset slightly) -->
+                            <div class="absolute bottom-4 right-4 w-full h-full rounded-3xl bg-gradient-to-r from-[#1D976C] to-[#093123] z-0"></div>
+
+                            <!-- Foreground image card -->
+                            <div class="relative z-10 w-full h-full overflow-hidden rounded-2xl">
+                                <img 
+                                    :src="member.image" 
+                                    :alt="member.name" 
+                                    class="w-full h-full object-cover rounded-2xl"
+                                />
+
+                                <!-- Overlay text -->
+                                <div class="absolute bottom-0 w-full bg-black bg-opacity-50 text-white py-2 bg-transparent text-sm font-semibold text-center rounded-b-2xl">
+                                    <p x-text="member.name"></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </template>
             </div>

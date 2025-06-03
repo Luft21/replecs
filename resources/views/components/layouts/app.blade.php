@@ -40,6 +40,9 @@
                 <a href="{{ url('/alternatif') }}">
                     <i class="fas fa-table text-2xl text-[#93F9B9]"></i>
                 </a>
+                <a href="{{ url('/profile') }}">
+                    <i class="fas fa-user text-2xl text-[#93F9B9]"></i>
+                </a>
                 <a href="{{ url('/about') }}">
                     <i class="fas fa-info-circle text-2xl text-[#93F9B9]"></i>
                 </a>
