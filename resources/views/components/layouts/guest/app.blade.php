@@ -12,7 +12,7 @@
 
     @livewireStyles
 </head>
-<body class="font-sans antialiased bg-[#161616] text-white">
+<body class="font-sans antialiased bg-[#121212] text-white">
     <div class="grid [grid-template-columns:0.5fr_repeat(4,_1fr)] [grid-template-rows:0.5fr_repeat(4,_1fr)] min-h-screen">
 
         {{-- Navbar (div1) --}}

@@ -12,6 +12,7 @@ use App\Livewire\ResultPage;
 
 Route::get('/', HomePage::class)->name('home');
 Route::get('/auth', AuthPage::class)->middleware('guest')->name('auth');
+Route::get('/login', fn () => redirect()->route('auth'))->name('login');
 Route::get('/about', AboutPage::class)->name('about');
 
 Route::post('/logout', function () {
@@ -25,6 +26,7 @@ Route::middleware(['auth'])->get('/profile', ProfilePage::class)->name('profile'
 
 Route::middleware(['auth'])->prefix('spk')->name('spk.')->group(function () {
     Route::get('sessions', SesiSpkPage::class)->name('sessions');
+    Route::get('alternatif', SesiSpkPage::class)->name('alternatif');
     Route::get('kuesioner', QuestionnairePage::class)->name('kuesioner');
     Route::get('result', ResultPage::class)->name('result');
 });

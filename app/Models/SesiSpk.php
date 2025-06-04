@@ -32,13 +32,13 @@ class SesiSpk extends Model
         return $this->belongsTo(User::class, 'id_user', 'id');
     }
 
-    // public function hasilSpk(): HasMany
-    // {
-    //     return $this->hasMany(HasilSpk::class, 'id_sesi', 'id');
-    // }
+    public function hasilSpk(): HasMany
+    {
+        return $this->hasMany(HasilSpk::class, 'id_sesi', 'id');
+    }
 
-    // public function bobotKriteria(): HasMany
-    // {
-    //     return $this->hasMany(BobotKriteria::class, 'id_sesi', 'id');
-    // }
+    public function bobotKriteria(): HasMany
+    {
+        return $this->hasMany(BobotKriteria::class, 'id_sesi', 'id');
+    }
 }

@@ -1,5 +1,4 @@
-{{-- About Page --}}
-<div class="text-white flex items-center justify-center relative px-6 py-6">
+<div class="text-white flex items-center justify-center relative">
 
     {{-- Konten utama --}}
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">

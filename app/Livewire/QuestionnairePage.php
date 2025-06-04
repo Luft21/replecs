@@ -3,6 +3,10 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\SesiSpk;
+use App\Models\Kriteria;
+use App\Models\BobotKriteria;
+use Illuminate\Support\Facades\Auth;
 
 class QuestionnairePage extends Component
 {
@@ -15,18 +19,36 @@ class QuestionnairePage extends Component
 
     public function submit()
     {
-        $weights = [
-            $this->value1 / 5,
-            $this->value2 / 5,
-            $this->value3 / 5,
-            $this->value4 / 5,
-            $this->value5 / 5,
-            $this->value6 / 5,
-        ];
+        \DB::beginTransaction();
+        try {
+            $session = SesiSpk::create([
+                'id_user' => Auth::id(),
+            ]);
+            $kriterias = Kriteria::orderBy('urutan')->get();
 
-        session()->put('weights', $weights);
+            $values = [
+                $this->value1,
+                $this->value2,
+                $this->value3,
+                $this->value4,
+                $this->value5,
+                $this->value6,
+            ];
 
-        return redirect()->to('/spk/result');
+            foreach ($kriterias as $i => $kriteria) {
+                BobotKriteria::create([
+                    'id_sesi' => $session->id,
+                    'id_kriteria' => $kriteria->id,
+                    'nilai_bobot' => $values[$i] / 5,
+                ]);
+            }
+
+            \DB::commit();
+            return redirect()->route('spk.result')->with('spk-session', $session->id);
+        } catch (\Exception $e) {
+            \DB::rollBack();
+            throw $e;
+        }
     }
 
     public function render()

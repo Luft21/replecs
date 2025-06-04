@@ -16,15 +16,16 @@ return new class extends Migration
             $table->string('nama');
             $table->string('merek', 100);
             $table->text('specs')->nullable();
-            $table->string('gambar')->nullable(); // Tambahkan ini
+            $table->string('gambar')->nullable();
             $table->timestamps();
         });
 
         // Tabel Kriteria
         Schema::create('kriteria', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->integer('urutan');
             $table->string('nama');
-            $table->string('jenis', 10); // Contoh: 'benefit', 'cost'
+            $table->string('jenis', 10);
             $table->text('deskripsi')->nullable();
             $table->timestamps();
         });
