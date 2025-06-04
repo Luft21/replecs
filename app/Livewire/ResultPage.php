@@ -3,6 +3,9 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\Laptop;
+use App\Models\Kriteria;
+use App\Models\NilaiKriteriaLaptop;
 
 class ResultPage extends Component
 {
@@ -11,41 +14,41 @@ class ResultPage extends Component
 
     public function mount()
     {
-        $weights = session('weights');
-
-        if (!$weights || count($weights) !== 6) {
+        $sessionId = request()->query('spk-session') ?? session('spk-session');
+        if (!$sessionId) {
             return redirect()->to('/');
         }
 
-        // Sample products with raw criteria values
-        $this->products = [
-            [
-                'name' => 'ROG Flow Z13',
-                'image' => 'rog-flow.png',
-                'criteria' => [3, 2, 3, 1, 2, 2],
-            ],
-            [
-                'name' => 'ASUS TUF',
-                'image' => 'asus-tuf.png',
-                'criteria' => [2, 2, 2, 3, 3, 3],
-            ],
-            [
-                'name' => 'Acer Nitro',
-                'image' => 'acer-nitro.png',
-                'criteria' => [1, 4, 3, 2, 2, 2],
-            ],
-            [
-                'name' => 'HP Omen',
-                'image' => 'hp-omen.png',
-                'criteria' => [4, 3, 2, 1, 1, 1],
-            ],
-            [
-                'name' => 'Lenovo Legion',
-                'image' => 'lenovo-legion.png',
-                'criteria' => [3, 3, 2, 2, 2, 2],
-            ],
-        ];
+        $weights = \App\Models\BobotKriteria::where('id_sesi', $sessionId)
+            ->orderBy('id_kriteria')
+            ->pluck('nilai_bobot')
+            ->toArray();
+            
+        $kriterias = Kriteria::orderBy('urutan')->get();
+        $kriteriaIds = $kriterias->pluck('id')->toArray();
 
+        $laptops = Laptop::all();
+
+        $nilaiKriteria = NilaiKriteriaLaptop::whereIn('id_kriteria', $kriteriaIds)->get();
+
+        // Susun products dari database
+        $this->products = [];
+        foreach ($laptops as $laptop) {
+            $criteria = [];
+            foreach ($kriteriaIds as $kid) {
+                $criteria[] = $nilaiKriteria
+                    ->where('id_laptop', $laptop->id)
+                    ->where('id_kriteria', $kid)
+                    ->first()
+                    ->nilai ?? 0;
+            }
+            $this->products[] = [
+                'name' => $laptop->nama,
+                'image' => $laptop->gambar,
+                'criteria' => $criteria,
+                'laptop_id' => $laptop->id,
+            ];
+        }
         $numCriteria = count($weights);
         $numProducts = count($this->products);
 
@@ -59,7 +62,6 @@ class ResultPage extends Component
                 $min[$i] = min($min[$i], $value);
             }
         }
-
         // Benefit criteria except index 4 (which is cost)
         $costCriteria = [4];
 
