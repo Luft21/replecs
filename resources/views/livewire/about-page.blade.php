@@ -49,23 +49,16 @@
 
             {{-- Card animasi --}}
             <div class="overflow-hidden h-[400px] rounded-2xl relative">
+            <div
+                class="flex transition-transform duration-500 ease-in-out"
+                :style="`transform: translateX(-${activeIndex * 100}%)`"
+                style="width: calc(100% * 3);" 
+            >
                 <template x-for="(member, index) in members" :key="index">
                     <div 
-                        x-show="index === activeIndex || index === prevIndex"
-                        :class="{
-                            'z-20 scale-100 translate-x-0': index === activeIndex,
-                            'z-10 scale-90 translate-x-6 opacity-50': index === prevIndex
-                        }"
-                        x-transition:enter="transition-all duration-500 ease-in-out"
-                        :x-transition:enter-start="direction === 'right' ? 'opacity-0 scale-90 translate-x-[-30px]' : 'opacity-0 scale-90 translate-x-[30px]'"
-                        :x-transition:enter-end="'opacity-100 scale-100 translate-x-0'"
-                        x-transition:leave="transition-all duration-500 ease-in-out"
-                        :x-transition:leave-start="'opacity-100 scale-100 translate-x-0'"
-                        :x-transition:leave-end="direction === 'right' ? 'opacity-0 scale-90 translate-x-[30px]' : 'opacity-0 scale-90 translate-x-[-30px]'"
-
-                        class="absolute inset-0 bg-transparent p-4 rounded-2xl shadow-lg flex flex-col items-center will-change-transform transform-gpu"
+                        class="w-full flex-shrink-0 p-4 rounded-2xl shadow-lg flex flex-col items-center will-change-transform"
                     >
-                       <!-- Styled layered image card -->
+                        <!-- Styled layered image card -->
                         <div class="relative w-full h-[360px] rounded-2xl overflow-visible shadow-md mb-3">
                             <!-- Background card (offset slightly) -->
                             <div class="absolute bottom-4 right-4 w-full h-full rounded-3xl bg-gradient-to-r from-[#1D976C] to-[#093123] z-0"></div>
@@ -87,6 +80,7 @@
                     </div>
                 </template>
             </div>
+        </div>
         </div>
     </div>
 </div>
