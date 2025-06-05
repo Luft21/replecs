@@ -7,6 +7,7 @@ use App\Models\SesiSpk;
 use App\Models\Kriteria;
 use App\Models\BobotKriteria;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class QuestionnairePage extends Component
 {
@@ -44,9 +45,19 @@ class QuestionnairePage extends Component
             }
 
             \DB::commit();
+            session()->put('weights', [
+                $this->value1 / 5,
+                $this->value2 / 5,
+                $this->value3 / 5,
+                $this->value4 / 5,
+                $this->value5 / 5,
+                $this->value6 / 5,
+            ]);
+            Log::info('Redirecting to result');
             return redirect()->route('spk.result')->with('spk-session', $session->id);
         } catch (\Exception $e) {
             \DB::rollBack();
+            Log::error('Error in submit(): ' . $e->getMessage());   
             throw $e;
         }
     }

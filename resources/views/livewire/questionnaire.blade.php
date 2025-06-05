@@ -71,15 +71,16 @@
         </div>
 
         {{-- Submit Button --}}
-        <div class="snap-center h-[40vh] w-full flex justify-center items-center">
-            <button
-                type="button"
-                class="w-full max-w-md py-3 rounded-md bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold shadow transition duration-300 text-lg"
-                wire:click="submit"
-            >
-                Submit
-            </button>
-        </div>
+        <form wire:submit.prevent="submit" class="w-full">
+            <div class="snap-center h-[40vh] w-full flex justify-center items-center">
+                <button
+                    type="submit"
+                    class="w-full max-w-md py-3 rounded-md bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold shadow transition duration-300 text-lg"
+                >
+                    Submit
+                </button>
+            </div>
+        </form>
     </div>
     <div class="sticky bottom-0 left-0 w-full h-[30vh] bg-gradient-to-t from-[#121212] to-[transparent] z-10 pointer-events-none"></div>
 
