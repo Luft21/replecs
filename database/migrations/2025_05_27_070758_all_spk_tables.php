@@ -52,7 +52,7 @@ return new class extends Migration
         Schema::create('nilai_kriteria_laptop', function (Blueprint $table) {
             $table->foreignUuid('id_kriteria')->constrained('kriteria', 'id')->onDelete('cascade');
             $table->foreignUuid('id_laptop')->constrained('laptop', 'id')->onDelete('cascade');
-            $table->float('nilai'); // Atau $table->decimal('nilai', 8, 2); jika perlu presisi
+            $table->integer('nilai'); // Atau $table->decimal('nilai', 8, 2); jika perlu presisi
             $table->primary(['id_kriteria', 'id_laptop']);
             $table->timestamps();
         });

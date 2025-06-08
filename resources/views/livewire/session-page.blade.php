@@ -1,21 +1,12 @@
 <div class="container mx-auto pt-8">
-    <div class="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-        <div>
-            <h2 class="text-3xl font-bold leading-tight text-gray-100">
-                History Sesi SPK
-            </h2>
-            <p class="text-sm text-gray-400 mt-1">
-                Berikut adalah daftar sesi SPK yang telah tercatat.
-            </p>
-        </div>
-        <a href="{{ url('/spk/kuesioner') }}">
-            <button class="mt-4 sm:mt-0 flex items-center gap-2 mr-6 px-4 py-2 bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white rounded-lg shadow transition-all duration-200">
-                <i class="fa-solid fa-calculator"></i>
-                <span class="hidden sm:inline">Tambah Sesi</span>
-            </button>
-        </a>
+    <div class="mb-6">
+        <h2 class="text-3xl font-bold leading-tight text-gray-100">
+            History Sesi SPK
+        </h2>
+        <p class="text-sm text-gray-400 mt-1">
+            Berikut adalah daftar sesi SPK yang telah tercatat.
+        </p>
     </div>
-
 
     <div class="bg-[#1e1e1e] shadow-lg rounded-lg overflow-hidden border border-neutral-700">
         <div class="overflow-x-auto">
@@ -37,7 +28,8 @@
                                 {{ $sesi->created_at->translatedFormat('d F Y, H:i') }} <span class="text-gray-500">WIB</span>
                             </td>
                             <td class="px-6 py-4 text-sm text-center">
-                                <a href="{{-- route('sesi.show', $sesi->id) --}}" class="font-medium text-[#1D976C] hover:text-[#27c08c]">
+                                <a href="{{ route('spk.result', ['spk-session' => $sesi->id]) }}"
+                                    class="font-medium text-[#1D976C] hover:text-[#27c08c]">
                                     Lihat Detail
                                 </a>
                             </td>
@@ -62,10 +54,6 @@
                 Menampilkan {{ $sesiSpks->firstItem() }} sampai {{ $sesiSpks->lastItem() }} dari {{ $sesiSpks->total() }} data
             </span>
             <div class="mt-2 sm:mt-0">
-                {{-- Pastikan pagination theme di komponen Livewire adalah 'tailwind' --}}
-                {{-- Untuk kustomisasi lebih lanjut, publish view pagination Livewire: --}}
-                {{-- php artisan vendor:publish --tag=livewire:pagination --}}
-                {{-- Kemudian edit file di resources/views/vendor/livewire/tailwind.blade.php (atau bootstrap.blade.php) --}}
                 {{ $sesiSpks->links() }}
             </div>
         </div>
