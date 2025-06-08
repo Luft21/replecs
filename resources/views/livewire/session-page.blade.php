@@ -1,19 +1,11 @@
 <div class="container mx-auto pt-8">
-    <div class="mb-6 flex flex-col md:flex-row md:items-center md:justify-between">
-        <div>
-            <h2 class="text-3xl font-bold leading-tight text-gray-100">
-                History Sesi SPK
-            </h2>
-            <p class="text-sm text-gray-400 mt-1">
-                Berikut adalah daftar sesi SPK yang telah tercatat.
-            </p>
-        </div>
-        @if ($sesiSpks->count() > 0)
-            <a href="{{ route('spk.kuesioner') }}"
-                class="mt-4 md:mt-0 inline-block bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold py-2 px-4 rounded-lg shadow transition-all duration-200">
-                + Tambah Sesi Baru
-            </a>
-        @endif
+    <div class="mb-6">
+        <h2 class="text-3xl font-bold leading-tight text-gray-100">
+            History Sesi SPK
+        </h2>
+        <p class="text-sm text-gray-400 mt-1">
+            Berikut adalah daftar sesi SPK yang telah tercatat.
+        </p>
     </div>
 
     <div class="bg-[#1e1e1e] shadow-lg rounded-lg overflow-hidden border border-neutral-700">

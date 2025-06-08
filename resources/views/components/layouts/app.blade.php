@@ -21,7 +21,7 @@
             <h1 class="ml-4 text-2xl font-bold bg-gradient-to-r from-[#1D976C] to-[#093123] bg-clip-text text-transparent">Replecs</h1>
             <form method="POST" action="{{ route('logout') }}" class="ml-auto">
                 @csrf
-                <button type="submit" class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white rounded-lg shadow transition-all duration-200">
+                <button type="submit" class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white rounded-lg shadow transition-all duration-300 transform hover:scale-105">
                     <i class="fas fa-sign-out-alt"></i>
                     <span class="hidden sm:inline">Logout</span>
                 </button>
