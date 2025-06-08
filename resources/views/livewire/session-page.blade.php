@@ -36,10 +36,14 @@
                                 {{ $sesi->created_at->translatedFormat('d F Y, H:i') }} <span class="text-gray-500">WIB</span>
                             </td>
                             <td class="px-6 py-4 text-sm text-center">
-                                <a href="{{ route('spk.result', ['spk-session' => $sesi->id]) }}"
-                                    class="font-medium text-[#1D976C] hover:text-[#27c08c]">
-                                    Lihat Detail
-                                </a>
+                                    <a href="{{ route('spk.result', ['spk-session' => $sesi->id]) }}"
+                                        class="font-medium text-[#1D976C] hover:text-[#27c08c] block mb-1">
+                                        Lihat Detail
+                                    </a>
+                                    <a href="{{ route('spk.calculation', ['spk-session' => $sesi->id]) }}"
+                                        class="font-medium text-[#1D976C] hover:text-[#27c08c] block">
+                                        Lihat Perhitungan
+                                    </a>
                             </td>
                         </tr>
                     @empty

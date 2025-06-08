@@ -2,7 +2,7 @@
     <p class="mb-4 font-semibold">{{ $question }}</p>
 
     {{-- Slider with circles overlay --}}
-    <div class="relative w-full px-2">
+    <div class="relative w-full">
         {{-- Circles overlay --}}
         <div class="absolute top-1/2 -translate-y-1/2 w-full flex justify-between z-10 pointer-events-none" id="circle-container-{{ $sliderId }}">
             @for ($i = 1; $i <= 5; $i++)

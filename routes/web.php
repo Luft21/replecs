@@ -9,6 +9,9 @@ use App\Livewire\QuestionnairePage;
 use App\Livewire\AboutPage;
 use App\Livewire\ProfilePage;
 use App\Livewire\ResultPage;
+use App\Livewire\CalculationPage;
+use App\Models\SesiSpk;
+use App\Models\HasilSpk;
 
 Route::get('/', HomePage::class)->name('home');
 Route::get('/auth', AuthPage::class)->middleware('guest')->name('auth');
@@ -29,4 +32,13 @@ Route::middleware(['auth'])->prefix('spk')->name('spk.')->group(function () {
     Route::get('alternatif', SesiSpkPage::class)->name('alternatif');
     Route::get('kuesioner', QuestionnairePage::class)->name('kuesioner');
     Route::get('result', ResultPage::class)->name('result');
+    Route::get('calculation', CalculationPage::class)->name('calculation');
+    Route::get('fix-rankings', function () {
+        $sessions = SesiSpk::all();
+        $updatedCount = 0;
+        foreach ($sessions as $session) {
+            HasilSpk::updateRankingForSession($session->id);
+            $updatedCount++;
+        }
+    })->name('fix-rankings');
 });

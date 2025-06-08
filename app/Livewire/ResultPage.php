@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Laptop;
 use App\Models\Kriteria;
 use App\Models\NilaiKriteriaLaptop;
+use App\Models\HasilSpk;
 
 class ResultPage extends Component
 {
@@ -23,7 +24,7 @@ class ResultPage extends Component
             ->orderBy('id_kriteria')
             ->pluck('nilai_bobot')
             ->toArray();
-            
+
         $kriterias = Kriteria::orderBy('urutan')->get();
         $kriteriaIds = $kriterias->pluck('id')->toArray();
 
@@ -36,11 +37,11 @@ class ResultPage extends Component
         foreach ($laptops as $laptop) {
             $criteria = [];
             foreach ($kriteriaIds as $kid) {
-                $criteria[] = $nilaiKriteria
-                    ->where('id_laptop', $laptop->id)
-                    ->where('id_kriteria', $kid)
-                    ->first()
-                    ->nilai ?? 0;
+                $nk = $nilaiKriteria->first(function ($item) use ($laptop, $kid) {
+                    return $item->id_laptop === $laptop->id && $item->id_kriteria === $kid;
+                });
+
+                $criteria[] = $nk ? $nk->nilai : 0;
             }
             $this->products[] = [
                 'name' => $laptop->nama,
@@ -62,6 +63,7 @@ class ResultPage extends Component
                 $min[$i] = min($min[$i], $value);
             }
         }
+
         // Benefit criteria except index 4 (which is cost)
         $costCriteria = [4];
 
@@ -112,6 +114,21 @@ class ResultPage extends Component
             $rTerm = ($Rmax - $Rmin) == 0 ? 0 : ($Ri[$i] - $Rmin) / ($Rmax - $Rmin);
             $qi = $v * $sTerm + (1 - $v) * $rTerm;
             $product['Qi'] = round($qi, 6);
+        }
+
+        // Save results to database
+        foreach ($this->products as $i => $product) {
+            HasilSpk::updateOrCreate(
+                [
+                    'id_sesi' => $sessionId,
+                    'id_laptop' => $product['laptop_id'],
+                ],
+                [
+                    'nilai_S' => $Si[$i],
+                    'nilai_R' => $Ri[$i],
+                    'nilai_Q' => $product['Qi'],
+                ]
+            );
         }
 
         // Step 6: Sort products by Qi (ascending)

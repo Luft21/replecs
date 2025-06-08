@@ -20,7 +20,6 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        // Tabel Kriteria
         Schema::create('kriteria', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->integer('urutan');
@@ -30,38 +29,35 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        // Tabel Sesi SPK
         Schema::create('sesi_spk', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->foreignUuid('id_user')->constrained('users', 'id')->onDelete('cascade'); // Pastikan nama tabel 'users' sudah benar
+            $table->foreignUuid('id_user')->constrained('users', 'id')->onDelete('cascade');
             $table->timestamps();
         });
 
-        // Tabel Hasil SPK (VIKOR)
         Schema::create('hasil_spk', function (Blueprint $table) {
+            $table->uuid('id')->primary();
             $table->foreignUuid('id_sesi')->constrained('sesi_spk', 'id')->onDelete('cascade');
             $table->foreignUuid('id_laptop')->constrained('laptop', 'id')->onDelete('cascade');
             $table->float('nilai_S');
             $table->float('nilai_R');
             $table->float('nilai_Q');
-            // $table->integer('ranking')->nullable(); // Ranking bisa dihitung saat query
+            $table->integer('ranking')->nullable();
             $table->timestamps();
         });
 
-        // Tabel Nilai Kriteria per Laptop
         Schema::create('nilai_kriteria_laptop', function (Blueprint $table) {
             $table->foreignUuid('id_kriteria')->constrained('kriteria', 'id')->onDelete('cascade');
             $table->foreignUuid('id_laptop')->constrained('laptop', 'id')->onDelete('cascade');
-            $table->integer('nilai'); // Atau $table->decimal('nilai', 8, 2); jika perlu presisi
+            $table->integer('nilai');
             $table->primary(['id_kriteria', 'id_laptop']);
             $table->timestamps();
         });
 
-        // Tabel Bobot Kriteria per Sesi
         Schema::create('bobot_kriteria', function (Blueprint $table) {
             $table->foreignUuid('id_kriteria')->constrained('kriteria', 'id')->onDelete('cascade');
             $table->foreignUuid('id_sesi')->constrained('sesi_spk', 'id')->onDelete('cascade');
-            $table->float('nilai_bobot'); // Atau $table->decimal('nilai_bobot', 8, 4);
+            $table->float('nilai_bobot');
             $table->primary(['id_kriteria', 'id_sesi']);
             $table->timestamps();
         });
