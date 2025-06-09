@@ -12,10 +12,9 @@
     <div class="flex justify-end mb-4 gap-4">
         <button
             class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white rounded-lg shadow transition-all duration-300 transform hover:scale-105"
-            > <a href="{{ route('export.report', ['spk-session' => request()->query('spk-session') ?? session('spk-session')]) }}">
+            >
             <i class="fas fa-file-export"></i>
             <span>Export Report</span>
-            </a>
         </button>
     </div>
 
