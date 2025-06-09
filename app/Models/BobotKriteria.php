@@ -19,4 +19,5 @@ class BobotKriteria extends Model
         'id_sesi',
         'nilai_bobot',
     ];
+    
 }
