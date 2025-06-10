@@ -10,12 +10,9 @@
         }
     </style>
     <div class="flex justify-end mb-4 gap-4">
-        <button
-            class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white rounded-lg shadow transition-all duration-300 transform hover:scale-105"
-            >
-            <i class="fas fa-file-export"></i>
-            <span>Export Report</span>
-        </button>
+        <a href="/spk/sessions" class="bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold py-2 px-4 rounded transition-colors duration-200 mr-auto flex items-center">
+            ← Kembali
+        </a>
     </div>
 
     <!-- Matriks Keputusan -->
@@ -144,21 +141,19 @@
     </div>
 
     <!-- Final Result -->
-    <h2 class="text-lg font-bold mb-2">Nilai Akhir dan Ranking</h2>
+    <h2 class="text-lg font-bold mb-2">Nilai Akhir</h2>
     <table class="table-auto border border-black w-full mb-6">
         <thead class="bg-gradient-to-r from-[#1D976C] to-[#093123]">
             <tr>
                 <th class="border p-1">Alternatif</th>
                 <th class="border p-1">Nilai Akhir (Q)</th>
-                <th class="border p-1">Ranking</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($hasil as $item)
                 <tr>
-                    <td class="border p-1">{{ $item['laptop']['nama'] ?? '-' }}</td>
+                    <td class="border p-1">{{ $item['nama'] ?? '-' }}</td>
                     <td class="border p-1">{{ round($item['nilai_Q'], 6) }}</td>
-                    <td class="border p-1">{{ $item['ranking'] }}</td>
                 </tr>
             @endforeach
         </tbody>
@@ -175,6 +170,6 @@
     <strong class="bg-gradient-to-r from-[#1D976C] to-[#093123] bg-clip-text text-transparent font-bold">
         Alternatif Ranking Tertinggi:
     </strong>
-    {{ $hasil[0]['laptop']['nama'] ?? '-' }}
+    {{ $hasil[0]['nama'] ?? '-' }}
     </div>
 </div>

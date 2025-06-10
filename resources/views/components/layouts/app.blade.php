@@ -51,10 +51,7 @@
 
 
         {{-- Main Content (div3) --}}
-        <div
-            class="col-start-2 col-end-6 row-start-2 row-end-6 px-6 py-4 overflow-y-auto"
-            style="max-height: calc(100vh - 80px);"
-        >
+        <div class="flex col-start-2 col-end-6 row-start-2 row-end-6 px-6 py-4">
             {{ $slot }}
         </div>
     </div>
