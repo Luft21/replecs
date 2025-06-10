@@ -1,6 +1,6 @@
-<div class="h-[600px] flex items-center text-white px-15 py-9 ml-[100px]">
-<div class="bg-[#1e1e1e] rounded-2xl p-12 shadow-2xl w-full max-w-6xl mx-auto">
-<div class="flex justify-between items-center gap-35">
+<div class="flex items-center justify-center min-h-[600px] h-full">
+    <div class="bg-[#1e1e1e] rounded-2xl p-12 shadow-2xl w-full max-w-6xl">
+        <div class="flex justify-between items-center gap-35">
             
             {{-- Kiri: Gabungan Foto Profil & Informasi Pengguna --}}
             <div class="flex flex-col items-center text-center">
@@ -15,7 +15,7 @@
                 {{-- Informasi Pengguna --}}
                 <div class="space-y-6 text-left">
                     <div>
-                        <p class="text-[#93F9B9] text-sm mb-1">Username</p>
+                        <p class="text-[#93F9B9] text-sm mb-1">Name</p>
                         <p class="text-white text-xl font-medium">{{ auth()->user()->name ?? 'Carlotta Montelli' }}</p>
                     </div>
 
@@ -35,14 +35,14 @@
             <div class="w-px bg-[#93F9B9] self-stretch"></div>
 
             {{-- Kanan: Tombol Aksi --}}
-                <div class="flex flex-col gap-5">
-                    <a href="#" class="bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold py-4 px-12 rounded-xl shadow-lg text-center text-lg transition-all duration-300 transform hover:scale-105 min-w-[200px]">
-                        Edit Profile
-                    </a>
-                    <a href="#" class="bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold py-4 px-12 rounded-xl shadow-lg text-center text-lg transition-all duration-300 transform hover:scale-105 min-w-[200px]">
-                        History
-                    </a>
-                </div>
+            <div class="flex flex-col gap-5">
+                <a href="#" class="bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold py-4 px-12 rounded-xl shadow-lg text-center text-lg transition-all duration-300 transform hover:scale-105 min-w-[200px]">
+                    Edit Profile
+                </a>
+                <a href="#" class="bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold py-4 px-12 rounded-xl shadow-lg text-center text-lg transition-all duration-300 transform hover:scale-105 min-w-[200px]">
+                    History
+                </a>
+            </div>
         </div>
     </div>
 </div>

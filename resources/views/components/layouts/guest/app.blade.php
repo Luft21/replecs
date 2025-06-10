@@ -39,7 +39,7 @@
 
 
         {{-- Main Content (div3) --}}
-        <div class="flex col-start-2 col-end-6 row-start-2 row-end-6 px-6 py-4">
+        <div class="flex items-center justify-center col-start-2 col-end-6 row-start-2 row-end-6 px-6 py-4">
             {{ $slot }}
         </div>
     </div>

@@ -51,7 +51,11 @@
 
 
         {{-- Main Content (div3) --}}
-        <div class="flex col-start-2 col-end-6 row-start-2 row-end-6 px-6 py-4">
+        <div class="flex col-start-2 col-end-6 row-start-2 row-end-6
+            @unless(request()->is('spk/sessions'))
+                items-center justify-center
+            @endunless
+        ">
             {{ $slot }}
         </div>
     </div>
