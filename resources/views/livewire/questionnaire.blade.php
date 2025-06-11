@@ -1,4 +1,4 @@
-<div class="relative h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth">
+<div class="relative h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth" style="font-family: 'Outfit', sans-serif;">
     {{-- Gradient Top --}}
     <div class="sticky top-0 left-0 w-full h-[30vh] bg-gradient-to-b from-[#121212] to-transparent z-10 pointer-events-none"></div>
     {{-- Gradient Bottom --}}

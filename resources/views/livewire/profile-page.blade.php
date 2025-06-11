@@ -1,4 +1,4 @@
-<div class="flex items-center justify-center min-h-[600px] h-full">
+<div class="flex items-center justify-center min-h-[600px] h-full" style="font-family: 'Outfit', sans-serif;">
     <div class="bg-[#1e1e1e] rounded-2xl p-12 shadow-2xl w-full max-w-6xl">
         <div class="flex justify-between items-center gap-35">
             
@@ -7,8 +7,8 @@
                 
                 {{-- Foto Profil --}}
                 <div class="flex-shrink-0 mb-4 ml-30">
-                    <div class="w-30 h-30 rounded-full border-3 border-green-400 overflow-hidden bg-gradient-to-br from-purple-400 via-pink-300 to-blue-400">
-                        <img src="{{ asset('images/pp.png') }}" alt="Profile Picture" class="w-full h-full object-cover">
+                    <div class="w-30 h-30 rounded-full border-3 border-green-400 overflow-hidden bg-gradient-to-br from-[#1D976C] to-[#093123]">
+                        <img src="{{ asset('images/pp.png') }}" alt="" class="w-full h-full object-cover">
                     </div>
                 </div>
 
