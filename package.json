@@ -2,8 +2,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build:frontend": "vite build",
-        "build": "npm run build:frontend && php artisan config:cache && php artisan route:cache && php artisan event:cache && php artisan view:cache",
+        "build": "vite build",
         "dev": "vite"
     },
     "devDependencies": {
