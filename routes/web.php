@@ -12,6 +12,7 @@ use App\Livewire\ResultPage;
 use App\Livewire\CalculationPage;
 use App\Livewire\EditProfilePage;
 use App\Livewire\HistoryPage;
+use App\Livewire\AlternatifPage;
 use App\Models\SesiSpk;
 use App\Models\HasilSpk;
 
@@ -19,6 +20,7 @@ Route::get('/', HomePage::class)->name('home');
 Route::get('/auth', AuthPage::class)->middleware('guest')->name('auth');
 Route::get('/login', fn () => redirect()->route('auth'))->name('login');
 Route::get('/about', AboutPage::class)->name('about');
+Route::get('/alternatif', AlternatifPage::class)->name('alternatif');
 
 Route::post('/logout', function () {
     Auth::logout();
