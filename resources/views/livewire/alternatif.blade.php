@@ -3,7 +3,7 @@
         @foreach($laptops as $laptop)
             <div class="bg-[#1e1e1e] rounded-xl shadow-lg p-6 flex flex-col items-center">
                 <div class="w-48 h-32 mb-4 rounded-lg bg-[#232323] border border-[#2c3e50] flex items-center justify-center overflow-hidden">
-                    <img src="{{ asset('storage/alternatif-images/' . ($laptop->gambar ?? 'default.png')) }}"
+                    <img src="{{ asset('storage/' . ($laptop->gambar ?? 'default.png')) }}"
                          alt="{{ $laptop->nama }}"
                          class="object-contain w-full h-full" />
                 </div>

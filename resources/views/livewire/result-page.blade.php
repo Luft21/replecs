@@ -9,7 +9,7 @@
             <div class="flex flex-col md:flex-row items-center gap-8">
                 <!-- Gambar Produk -->
                 <div class="w-1/2 md:w-3/5 flex-shrink-0">
-                    <img src="{{ asset('storage/alternatif-images/' . $mainProduct['image']) }}" 
+                    <img src="{{ asset('storage/' . $mainProduct['image']) }}" 
                          alt="{{ $mainProduct['name'] }}" 
                          class="w-full h-auto object-cover rounded-md shadow-lg">
                 </div>
@@ -51,7 +51,7 @@
         @if ($index >= 1 && $index <= 4)
             <div class="w-1/4 relative cursor-pointer group transform hover:-translate-y-2 transition-transform duration-300">
                 
-                <img src="{{ asset('storage/alternatif-images/' . $product['image']) }}" 
+                <img src="{{ asset('storage/' . $product['image']) }}" 
                      alt="{{ $product['name'] }}"
                      class="rounded-lg object-cover w-full h-32 md:h-40 border-2 {{ $mainProduct['name'] === $product['name'] ? 'border-[#1D976C]' : 'border-transparent' }} group-hover:border-[#1D976C] transition-all duration-300">
                 

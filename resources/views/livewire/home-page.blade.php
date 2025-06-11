@@ -27,7 +27,7 @@
         active: 0,
         images: [
             @foreach($laptopImages as $nama => $gambar)
-                { src: '{{ asset('storage/alternatif-images/' . $gambar) }}', label: '{{ $nama }}' },
+                { src: '{{ asset('storage/' . $gambar) }}', label: '{{ $nama }}' },
             @endforeach
         ],
         init() {
