@@ -22,19 +22,21 @@ class AuthPage extends Component
     {
         $rules = [
             'email' => 'required|email',
-            'password' => [
-                'required',
-                'min:8',
-                'regex:/[A-Z]/',
-                'regex:/[0-9]/',
-                'regex:/[\W_]/',
-            ],
         ];
 
         if ($this->isRegisterMode) {
             $rules['name'] = 'required|min:3|max:255';
             $rules['email'] .= '|unique:users,email';
+            $rules['password'] = [
+                'required',
+                'min:8',
+                'regex:/[A-Z]/',
+                'regex:/[0-9]/',
+                'regex:/[\W_]/',
+            ];
             $rules['password_confirmation'] = 'required|same:password';
+        } else {
+            $rules['password'] = 'required';
         }
 
         return $rules;
