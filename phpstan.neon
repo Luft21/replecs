@@ -1,0 +1,12 @@
+includes:
+    - ./vendor/larastan/larastan/extension.neon
+
+parameters:
+    paths:
+        - app/
+        - resources/
+        - routes/
+
+    # Level aturan analisis, dari 0 (paling longgar) hingga 9 (paling ketat).
+    # Mulai dari level 5 adalah titik awal yang baik.
+    level: 9

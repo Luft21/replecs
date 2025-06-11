@@ -1,6 +1,9 @@
 <div class="text-justify p-6 bg-[#1f1f1f] rounded-xl shadow-md w-full max-w-3xl mx-auto text-white">
     <p class="mb-4 font-semibold">{{ $question }}</p>
-
+    <div class="flex justify-between text-xs text-gray-400 font-semibold mb-2 select-none">
+        <span>Kurang Penting</span>
+        <span>Sangat Penting</span>
+    </div>
     {{-- Slider with circles overlay --}}
     <div class="relative w-full">
         {{-- Circles overlay --}}
