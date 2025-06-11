@@ -22,7 +22,13 @@ class AuthPage extends Component
     {
         $rules = [
             'email' => 'required|email',
-            'password' => 'required|min:8',
+            'password' => [
+                'required',
+                'min:8',
+                'regex:/[A-Z]/',
+                'regex:/[0-9]/',
+                'regex:/[\W_]/',
+            ],
         ];
 
         if ($this->isRegisterMode) {
@@ -42,6 +48,7 @@ class AuthPage extends Component
         'email.unique' => 'Email ini sudah terdaftar.',
         'password.required' => 'Password wajib diisi.',
         'password.min' => 'Password minimal 8 karakter.',
+        'password.regex' => 'Password harus mengandung minimal 1 huruf kapital, 1 angka, dan 1 simbol.',
         'password_confirmation.required' => 'Konfirmasi password wajib diisi.',
         'password_confirmation.same' => 'Konfirmasi password tidak sesuai dengan password.',
     ];
