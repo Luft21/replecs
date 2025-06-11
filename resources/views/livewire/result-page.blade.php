@@ -1,8 +1,5 @@
 <div class="bg-[#121212] text-white p-4 sm:p-8 font-sans" style="font-family: 'Outfit', sans-serif;">
 
-    {{-- Pastikan Font Awesome disertakan dalam file layout utama Anda untuk ikon medali --}}
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /> --}}
-
     @if ($mainProduct)
         <!-- Tampilan Produk Utama -->
         <div class="max-w-7xl mx-auto bg-[#1a1a1a] p-6 rounded-lg shadow-2xl mb-12">
@@ -43,7 +40,7 @@
 
         <!-- Galeri 4 Laptop Teratas (Index 1-4) -->
 <div class="max-w-5xl mx-auto">
-    <h2 class="text-2xl font-bold text-center text-white mb-8">Top 2-5 Recommendations</h2>
+    <h2 class="text-2xl font-bold text-center text-white mb-8">Other Recommendations</h2>
     
     <div class="flex flex-row justify-center gap-4">
 

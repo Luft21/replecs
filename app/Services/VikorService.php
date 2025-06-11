@@ -16,7 +16,7 @@ class VikorService
      * @param bool $saveToDb
      * @return array hasil ranking dan detail perhitungan
      */
-    public function calculate($sessionId, $saveToDb = false)
+    public function calculate($sessionId, $saveToDb = false, $laptopIds = null)
     {
         $kriterias = Kriteria::orderBy('urutan')->get();
         $kriteriaIds = $kriterias->pluck('id')->toArray();
@@ -29,7 +29,7 @@ class VikorService
         $kriterias = Kriteria::orderBy('urutan')->get();
         $kriteriaIds = $kriterias->pluck('id')->toArray();
 
-        $laptops = Laptop::all();
+        $laptops = $laptopIds ? Laptop::whereIn('id', $laptopIds)->get() : Laptop::all();
 
         $nilaiKriteria = NilaiKriteriaLaptop::whereIn('id_kriteria', $kriteriaIds)->get();
 

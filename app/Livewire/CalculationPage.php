@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Services\VikorService;
+use App\Models\HasilSpk;
 
 class CalculationPage extends Component
 {
@@ -14,8 +15,12 @@ class CalculationPage extends Component
             return redirect()->to('/');
         }
 
+        $hasil = HasilSpk::where('id_sesi', $sessionId)->get();
+        $laptopIds = $hasil->pluck('id_laptop')->toArray();
+
         $vikor = new VikorService();
-        $result = $vikor->calculate($sessionId, true);
+        $result = $vikor->calculate($sessionId, false, $laptopIds);
+
         return view('livewire.calculation', [
             'kriterias' => $result['kriterias'],
             'matriksKeputusan' => collect($result['products'])->mapWithKeys(fn($p) => [$p['name'] => $p['criteria']]),
