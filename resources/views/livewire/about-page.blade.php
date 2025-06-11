@@ -1,4 +1,4 @@
-<div class="text-white flex items-center justify-center relative">
+<div class="text-white flex items-center justify-center relative" style="font-family: 'Outfit', sans-serif;">
 
     {{-- Konten utama --}}
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">

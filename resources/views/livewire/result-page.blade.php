@@ -1,4 +1,4 @@
-<div class="bg-[#121212] text-white p-4 sm:p-8 font-sans">
+<div class="bg-[#121212] text-white p-4 sm:p-8 font-sans" style="font-family: 'Outfit', sans-serif;">
 
     {{-- Pastikan Font Awesome disertakan dalam file layout utama Anda untuk ikon medali --}}
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /> --}}

@@ -1,4 +1,4 @@
-<div class="flex justify-center items-center min-h-screen bg-[#121212] px-4 font-sans text-white">
+<div class="flex justify-center items-center min-h-screen bg-[#121212] px-4 font-sans text-white" style="font-family: 'Outfit', sans-serif;">
     <div class="bg-[#1e1e1e] w-full max-w-md p-10 rounded-xl shadow-xl text-center">
         <h2 class="text-2xl font-light text-center mb-6">
             {{ $isRegisterMode ? 'Buat Akun Baru' : 'Login ke Akun Anda' }}

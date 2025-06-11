@@ -1,4 +1,4 @@
-<div class="w-full h-full overflow-y-auto p-8 text-sm text-white scrollbar-hidden" style="font-family: 'Poppins', sans-serif;" >
+<div class="w-full h-full overflow-y-auto p-8 text-sm text-white scrollbar-hidden" style="font-family: 'Outfit', sans-serif;">
     <style>
         /* Hide scrollbar but allow scroll */
         .scrollbar-hidden {

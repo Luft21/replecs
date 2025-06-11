@@ -1,4 +1,4 @@
-<div class="container mx-auto pt-8">
+<div class="container mx-auto pt-8" style="font-family: 'Outfit', sans-serif;">
     <div class="mb-6 flex flex-col md:flex-row md:items-center md:justify-between">
         <div>
             <h2 class="text-3xl font-bold leading-tight text-gray-100">
@@ -10,7 +10,7 @@
         </div>
         @if ($sesiSpks->count() > 0)
             <a href="{{ route('spk.kuesioner') }}"
-                class="mt-4 md:mt-0 inline-block bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold py-2 px-4 rounded-lg shadow transition-all duration-200">
+                class="mt-4 md:mt-0 inline-block bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold py-2 px-4 rounded-lg shadow transition-all duration-300 transform hover:scale-105">
                 + Tambah Sesi Baru
             </a>
         @endif

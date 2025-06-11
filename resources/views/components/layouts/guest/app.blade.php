@@ -8,8 +8,7 @@
 
     {{-- Font Awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     @livewireStyles
 </head>
 <body class="font-sans antialiased bg-[#121212] text-white">
@@ -20,9 +19,9 @@
             <div class="w-12 h-12 bg-gradient-to-br from-[#1D976C] to-[#093123] rounded-full"></div>
             <h1 class="ml-4 text-2xl font-bold bg-gradient-to-r from-[#1D976C] to-[#093123] bg-clip-text text-transparent">Replecs</h1>    
                 <a href="{{ url('/auth') }}" class="ml-auto">
-                <button class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white rounded-lg shadow transition-all duration-200">
+                <button class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white rounded-lg shadow transition-all duration-300 transform hover:scale-105">
                     <i class="fas fa-sign-in-alt"></i>
-                    <span class="hidden sm:inline">Log In</span>
+                    <span class="hidden sm:inline" style="font-family: 'Outfit', sans-serif;">Log In</span>
                 </button>
                 </a>
         </div>

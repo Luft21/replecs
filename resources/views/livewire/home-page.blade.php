@@ -1,9 +1,9 @@
 {{-- Main Content --}}
-<div class="p-8 text grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center">
+<div class="p-8 text grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center" style="font-family: 'Outfit', sans-serif;">
     {{-- Text Content --}}
     <div>
         <p class="mb-4 text-xl font-semibold">🎮 Bingung Pilih Laptop Gaming? Kami Bantu Temukan yang Terbaik.</p>
-        <p class="mb-6 leading-relaxed text-sm md:text-base">
+        <p class="mb-6 leading-relaxed text-sm md:text-base text-justify">
             Gunakan aplikasi cerdas berbasis Sistem Pendukung Keputusan (SPK) untuk menemukan laptop gaming
             yang paling sesuai dengan kebutuhan performa, budget, dan gaya bermainmu. Pilih sendiri
             prioritasmu, dan biarkan sistem bekerja memberi rekomendasi paling akurat.
