@@ -10,6 +10,8 @@ use App\Livewire\AboutPage;
 use App\Livewire\ProfilePage;
 use App\Livewire\ResultPage;
 use App\Livewire\CalculationPage;
+use App\Livewire\EditProfilePage;
+use App\Livewire\HistoryPage;
 use App\Models\SesiSpk;
 use App\Models\HasilSpk;
 
@@ -25,7 +27,11 @@ Route::post('/logout', function () {
     return redirect('/')->with('status', 'Anda telah logout.');
 })->name('logout');
 
-Route::middleware(['auth'])->get('/profile', ProfilePage::class)->name('profile');
+Route::middleware(['auth'])->prefix('user')->name('user.')->group(function () {
+    Route::get('profile', ProfilePage::class)->name('profile');
+    Route::get('editprofile', EditProfilePage::class)->name('editprofile');
+    Route::get('history', HistoryPage::class)->name('history');
+});
 
 Route::middleware(['auth'])->prefix('spk')->name('spk.')->group(function () {
     Route::get('sessions', SesiSpkPage::class)->name('sessions');

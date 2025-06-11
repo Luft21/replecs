@@ -35,11 +35,11 @@
             <div class="w-px bg-[#93F9B9] self-stretch"></div>
 
             {{-- Kanan: Tombol Aksi --}}
-            <div class="flex flex-col gap-5">
-                <a href="#" class="bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold py-4 px-12 rounded-xl shadow-lg text-center text-lg transition-all duration-300 transform hover:scale-105 min-w-[200px]">
+            <div class="flex flex-col pr-[90px] gap-5">
+                <a href="{{ url('/user/editprofile') }}" class="bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold py-4 px-12 rounded-xl shadow-lg text-center text-lg transition-all duration-300 transform hover:scale-105 min-w-[200px]">
                     Edit Profile
                 </a>
-                <a href="#" class="bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold py-4 px-12 rounded-xl shadow-lg text-center text-lg transition-all duration-300 transform hover:scale-105 min-w-[200px]">
+                <a href="{{ url('/user/history') }}" class="bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold py-4 px-12 rounded-xl shadow-lg text-center text-lg transition-all duration-300 transform hover:scale-105 min-w-[200px]">
                     History
                 </a>
             </div>
