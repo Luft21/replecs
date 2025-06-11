@@ -6,7 +6,7 @@
         {{-- Teks --}}
         <div class="-mt-[150px]">
             <h1 class="text-4xl font-bold mb-8">About</h1>
-            <p class="text-m leading-relaxed text-gray-300">
+            <p class="text-m text-justify leading-relaxed text-gray-300">
                 Replecs adalah aplikasi cerdas berbasis Sistem Pendukung Keputusan (SPK) dalam menemukan laptop gaming yang paling sesuai untuk pengguna berdasarkan performa, daya tahan, budget, dan lainnya.<br><br>
                 Aplikasi ini dikembangkan oleh Kelompok 8 yang beranggotakan Jose, Ady, dan Angel.
             </p>

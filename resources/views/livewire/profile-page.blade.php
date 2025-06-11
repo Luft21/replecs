@@ -13,23 +13,21 @@
                 </div>
 
                 {{-- Informasi Pengguna --}}
-                <div class="space-y-6 text-left">
-                    <div>
-                        <p class="text-[#93F9B9] text-sm mb-1">Name</p>
-                        <p class="text-white text-xl font-medium">{{ auth()->user()->name ?? 'Carlotta Montelli' }}</p>
-                    </div>
-
-                    <div>
-                        <p class="text-[#93F9B9] text-sm mb-1">Email</p>
-                        <p class="text-white text-xl">{{ auth()->user()->email ?? 'akumontelli@gmail.com' }}</p>
-                    </div>
-
-                    <div>
-                        <p class="text-[#93F9B9] text-sm mb-1">Password</p>
-                        <p class="text-white text-xl">*******</p>
-                    </div>
+            <div class="w-full max-w-sm space-y-6 text-[#93F9B9] text-left">
+                <div>
+                    <p class="text-sm">Username</p>
+                    <p class="text-white text-xl font-medium">{{ auth()->user()->name ?? 'Carlotta Montelli' }}</p>
+                </div>
+                <div>
+                    <p class="text-sm">Email</p>
+                    <p class="text-white text-xl">{{ auth()->user()->email ?? 'akumontelli@gmail.com' }}</p>
+                </div>
+                <div>
+                    <p class="text-sm">Password</p>
+                    <p class="text-white text-xl">*******</p>
                 </div>
             </div>
+        </div>
 
             {{-- Garis Tengah--}}
             <div class="w-px bg-[#93F9B9] self-stretch"></div>
@@ -38,9 +36,6 @@
             <div class="flex flex-col pr-[90px] gap-5">
                 <a href="{{ url('/user/editprofile') }}" class="bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold py-4 px-12 rounded-xl shadow-lg text-center text-lg transition-all duration-300 transform hover:scale-105 min-w-[200px]">
                     Edit Profile
-                </a>
-                <a href="{{ url('/user/history') }}" class="bg-gradient-to-r from-[#1D976C] to-[#093123] hover:from-[#157a54] hover:to-[#093123] text-white font-semibold py-4 px-12 rounded-xl shadow-lg text-center text-lg transition-all duration-300 transform hover:scale-105 min-w-[200px]">
-                    History
                 </a>
             </div>
         </div>

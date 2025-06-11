@@ -7,7 +7,7 @@
                          alt="{{ $laptop->nama }}"
                          class="object-contain w-full h-full" />
                 </div>
-                <div class="text-xl font-semibold text-white mb-2 text-center">{{ $laptop->nama }}</div>
+                <div class="text-xl text-white mb-2 text-center">{{ $laptop->nama }}</div>
                 <div class="w-full">
                     @foreach($kriterias as $kriteria)
                         @php
