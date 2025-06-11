@@ -11,7 +11,6 @@ use App\Livewire\ProfilePage;
 use App\Livewire\ResultPage;
 use App\Livewire\CalculationPage;
 use App\Livewire\EditProfilePage;
-use App\Livewire\HistoryPage;
 use App\Livewire\AlternatifPage;
 use App\Models\SesiSpk;
 use App\Models\HasilSpk;
@@ -32,7 +31,6 @@ Route::post('/logout', function () {
 Route::middleware(['auth'])->prefix('user')->name('user.')->group(function () {
     Route::get('profile', ProfilePage::class)->name('profile');
     Route::get('editprofile', EditProfilePage::class)->name('editprofile');
-    Route::get('history', HistoryPage::class)->name('history');
 });
 
 Route::middleware(['auth'])->prefix('spk')->name('spk.')->group(function () {
